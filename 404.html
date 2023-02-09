@@ -5,12 +5,16 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
 		<title>Browser 95</title>
 		<style>
+			/* Link Colors */
 			a:link{
 			  color: black;
 			}
+			
 			a:visited{
 			  color:black;
 			}
+			
+			/* Text Marking */
 			*{
 			  padding:0px;
 			  margin:0px;
@@ -18,9 +22,12 @@
 			  -ms-user-select: none; /* IE 10 and IE 11 */
 			  user-select: none; /* Standard syntax */
 			}
+			
+			/* Error Window */
 			.button:active{
 			  outline:none;
 			}
+			
 			.box{
 			  padding:0px;
 			  overflow: hidden;
@@ -33,15 +40,18 @@
 			  border-color:#FFFFFF #808080 #808080 #FFFFFF;
 			  border-style:solid;
 			}
+			
 			div.title{
 			  height:18px;
 			  width:100%;
 			  background:#000080;
 			  color:#FFF;
 			}
+			
 			img.title{
 			  float:left;
 			}
+			
 			p.title{
 			  margin:2px 0 0 1px;
 			  float:left;
@@ -49,6 +59,7 @@
 			  font-weight:bold;
 			  font-size:11px;
 			}
+			
 			.title button{
 			  /*position:absolute;
 			  right:3px;
@@ -67,16 +78,19 @@
 			  text-align:center;
 			  focus:none;
 			}
+			
 			div.body{
 			  padding:13px 12px 12px;
 			  height:100%;
 			  width:calc(100% - 26px);
 			  display:inline-block;
 			}
+			
 			div.body p{
 			  font-family:"MS Sans Serif";
 			  font-size:11px;
 			}
+			
 			div.body button{
 			  font-family:"MS Sans Serif";
 			  font-size:11px;
@@ -92,7 +106,7 @@
 			  bottom:0px;
 			}
 			
-			
+			/* Task Bar */
 			#taskbar {
 				height: 26px;
 				background-color: rgb(192,192,192);
@@ -112,7 +126,6 @@
 				width: 52px;
 				height: 21px;
 				display: inline-block;
-				padding: 1px 2px;
 				margin-left: 2px;
 				cursor: default;
 				user-select: none;
@@ -175,6 +188,15 @@
 				border-top: ridge 1px white;
 				border-bottom: ridge 1px grey;
 				margin: 2px ;
+			}
+			
+			/* Print Settings */
+			@media print {
+				@page {size: landscape}
+				html {
+					background-color: #008080 !important;
+					print-color-adjust: exact; 
+				}
 			}
 		</style>
 	</head>
