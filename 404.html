@@ -11,8 +11,6 @@
 		  -webkit-user-select: none; /* Safari */
 		  -ms-user-select: none; /* IE 10 and IE 11 */
 		  user-select: none; /* Standard syntax */
-		  max-height: 100%;
-		  max-width: 100%;
 		}
 		.button:active{
 		  outline:none;
@@ -90,13 +88,13 @@
 		
 		
 		#taskbar {
-        height: 26px;
-        background-color: rgb(192,192,192);
-        position: absolute;
-        bottom: 0px;
-        left: 0px;
-        right: 0px;
-        border-top: ridge 2px white;
+			height: 26px;
+			background-color: rgb(192,192,192);
+			position: absolute;
+			bottom: 0px;
+			left: 0px;
+			right: 0px;
+			border-top: ridge 2px white;
 		}
 
 		#start {
@@ -219,7 +217,7 @@
 						  <button style="top: 15px; width: 60px;" class="button" onclick="spawnWindow()">OK</button>
 					</div>
 			  </div>
-		`).find('div.draggable').draggable();
+		`).find('div.draggable').draggable({scroll: false});
 		
 		errNum += 1;
 		}
