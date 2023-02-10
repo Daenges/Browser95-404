@@ -2,13 +2,18 @@
 A Windows 95 themed 404 page.
 
 ## Features
-- draggable, duplicating error windows
-- interactive buttons
-- single file
+### Error Window
+- starts with **one** window on random screen position
+- windows are **freely draggable**
+- click on `OK` or `X` **spawns another window** at a *random location*
+- `?`-Button is a **dummy** link to `google.com`, may be replaced with anything
 
-## Images
-### Before
-![grafik](https://user-images.githubusercontent.com/57369924/217903411-6cf8e0d4-c074-4dc3-9ddd-31ef3df5db4f.png)
+### Desktop
+- `My Computer` opens a dummy upload dialog (will accept but not process any file)
+- `Recycle Bin` reloads and thereby clears the desktop back to one error window
+- `Printers` offers a PDF file of the page (*so you can share your **Errror-Window-Count-Highscore** to all your friends*)
+- `Start` is a **dummy** linkt to `google.com` &rarr; may be a redirect to the main page
+- `Clock` displays the actual time
 
-### After
-![grafik](https://user-images.githubusercontent.com/57369924/217903601-25af4359-7aa2-4e52-93e6-0bf2aaac3197.png)
+## Demo
+![](https://user-images.githubusercontent.com/57369924/218161483-fd97a374-8568-4d46-9676-024dcfc304c7.gif)
