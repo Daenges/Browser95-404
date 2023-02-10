@@ -115,6 +115,7 @@
 				left: 0px;
 				right: 0px;
 				border-top: ridge 2px white;
+				z-index: 2147483647;
 			}
 
 			#start {
@@ -242,7 +243,7 @@
 		var errNum = 404;
 		function spawnWindow() {
 			let posx = (Math.random() * ($(document).width() - 292)).toFixed();
-			let posy = (Math.random() * ($(document).height() - 100)).toFixed();
+			let posy = (Math.random() * ($(document).height() - 125)).toFixed();
 			
 			$('body').append(`
 				<div class="box draggable" style="top: ${posy}px; left: ${posx}px">
