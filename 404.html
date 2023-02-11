@@ -241,12 +241,16 @@
 	  <!-- Create error windows and handle their dragging-->
 	  <script>
 		var errNum = 404;
+		var posZ = 0;
+		
 		function spawnWindow() {
 			let posx = (Math.random() * ($(document).width() - 292)).toFixed();
 			let posy = (Math.random() * ($(document).height() - 125)).toFixed();
+			posZ += 1;
 			
+			// Spawn new window
 			$('body').append(`
-				<div class="box draggable" style="top: ${posy}px; left: ${posx}px">
+				<div class="box draggable" style="top: ${posy}px; left: ${posx}px; z-index: ${posZ}">
 						<div class="title" id="header">
 							  <img src=" data:image/png;base64,AAABAAEAICAQAAEABADoAgAAFgAAACgAAAAgAAAAQAAAAAEABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AACAAACAgIAAAP8AAMDAwAAA//8A////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEREAAAEREAAAAAAAAAAAAAEREAAREQAAAAAAAAAAAAAAEREBERAAAAAAAAAAAAAAAAEREREAAAAAAAAAAAAAAAAAEREQAAAAAAAAAAAAAAAAABEREAAAAAAAAAAAAAAAAAEREREAAAAAAAAHB3d3d3cREWERF3d3d3dwcwMzMzMxERMzEREzMzMzMDAAAAAAEREDcAEREAAAAAAAAAAAAAAAA3AAAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMzMzMzMzMzMzMzMzMzAAADdVVVVVVVVVVVVVVVUzAAA3V3d3d3d3d3d3d3dVMzAAN1MzMzMzMzMzMzMzVTMwADdXd3d3d3d3d3d3d1UzMAA3UzMzMzMzMzMzMzNVMzAAN1VVVVVVVVVVVVVVVTMwADdVVVVVVVVVVVVSIlUzMAA3VVVVVVVVVVVVVERVMzAAN3d3d3d3d3d3d3d3dzMwAANVVVVVVVVVVVVVVVVTMAAANVVVVVVVVVVVVVVVVTAAAAMzMzMzMzMzMzMzMzMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/////////////////h8P//8OH///hD///8B////g////wH/9AAAACQAAAAkAAAAL/hEP///x////8f//AAAAPgAAAB4AAAAOAAAABgAAAAYAAAAGAAAABgAAAAYAAAAGAAAABgAAAAcAAAAHgAAAB8AAAA////////////////w==" width="18" height="18" class="title" />
 							  <p class="title">&nbsp;Error ${errNum}</p>
@@ -262,6 +266,14 @@
 						</div>
 				  </div>
 			`).find('div.draggable').draggable({scroll: false});
+			
+			// Bring focussed window to front
+			$(".draggable").on('mousedown', function(event) {
+				if ($(this).css("z-index") < posZ) {
+					posZ += 1;
+					$(this).css(`z-index`, posZ);
+				}
+			});
 			
 			errNum += 1;
 		}
